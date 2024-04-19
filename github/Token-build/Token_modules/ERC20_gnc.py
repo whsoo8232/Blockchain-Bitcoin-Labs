@@ -49,10 +49,6 @@ def polygon_read_abi(file_name):
     return info_json["abi"]
 
 
-def polygon_decimals():
-    return 18
-
-
 def polygon_eth_get_balance(web3, account):
     account = web3.to_checksum_address(account)
     balance = web3.from_wei(web3.eth.get_balance(account), 'ether')
@@ -108,7 +104,7 @@ def polygon_token_approve(web3, mycontract, From, From_pk, To, value):
 def polygon_token_mint(web3, mycontract, owner, owner_pk, value):
     owner_add = web3.to_checksum_address(owner)
     nonce = web3.eth.get_transaction_count(owner_add)
-    amount = value * 10**mycontract.functions.decimals()
+    amount = value * 10**mycontract.functions.decimals().call()
     gas_estimate = mycontract.functions.mint(owner_add,amount).estimate_gas({'from': owner_add})
     lst = []
     print(gas_estimate)
@@ -142,7 +138,7 @@ def polygon_token_airdrop_mint(web3, mycontract, From, From_pk, To, value):
     From_add = web3.to_checksum_address(From)
     To_add = web3.to_checksum_address(To)
     nonce = web3.eth.get_transaction_count(From_add)
-    amount = value * 10**decimals()
+    amount = value * 10**mycontract.functions.decimals().call()
     gas_estimate = mycontract.functions.mint(To_add,amount).estimate_gas({'from': From_add})
     lst = []
     print(gas_estimate)
@@ -175,7 +171,7 @@ def polygon_token_airdrop_mint(web3, mycontract, From, From_pk, To, value):
 def polygon_token_burn(web3, mycontract, owner, owner_pk, value):
     owner_add = web3.to_checksum_address(owner)
     nonce = web3.eth.get_transaction_count(owner_add)
-    amount = value * 10**decimals()
+    amount = value * 10**mycontract.functions.decimals().call()
     gas_estimate = mycontract.functions.burn(amount).estimate_gas({'from': owner_add})
     lst = []
     print(gas_estimate)
@@ -207,7 +203,7 @@ def polygon_token_burn(web3, mycontract, owner, owner_pk, value):
 def polygon_token_transferFrom(web3, mycontract, From, From_pk, To, value):
     From_add = web3.to_checksum_address(From)
     To_add = web3.to_checksum_address(To)
-    amount = value * 10**decimals()
+    amount = value * 10**mycontract.functions.decimals().call()
     nonce = web3.eth.get_transaction_count(From_add)
     gas_estimate = mycontract.functions.transfer(To_add,amount).estimate_gas({'from': From_add})
     lst = []
