@@ -69,9 +69,9 @@ def polygon_metic_transfer(web3, From, From_pk, To, value):
 
 
 def polygon_get_contract(web3, contractAddress, contractAbi):
-    file = open(abi, 'r', encoding='utf-8')
+    file = open(contractAbi, 'r', encoding='utf-8')
     contractaddress = web3.to_checksum_address(contractAddress)
-    mycontract = web3.eth.contract(contractAbi=file.read(), address=contractAddress)
+    mycontract = web3.eth.contract(abi=file.read(), address=contractaddress)
     
     return mycontract
 
@@ -133,7 +133,7 @@ def polygon_NFT_change_ownership(web3, mycontract, From, From_pk, To):
 
 def polygon_NFT_isMinter(web3, mycontract, account):
     confirm_account = web3.to_checksum_address(account)
-    role = mycontract.functions.isMinter(confirm_address).call()
+    role = mycontract.functions.isMinter(confirm_account).call()
     
     return role
 
@@ -222,7 +222,7 @@ def polygon_NFT_snapshot(web3, mycontract):
     return owner_list
 
 
-def polygon_NFT_owner_mint(web3, mycontract, From, From_pk, ipfsUri, tokenId):
+def polygon_NFT_owner_mint(web3, mycontract, From, From_pk, ipfsUri, token_id):
     From_add = web3.to_checksum_address(From)
     nonce = web3.eth.get_transaction_count(From_add)
     lst = []

@@ -32,7 +32,7 @@ module.exports = {
       accounts: [process.env.PRIVATE_KEY1],
     },
     amoy: {
-      url: `https://polygon-amoy-bor-rpc.publicnode.com`,
+      url: `https://rpc-amoy.polygon.technology`,
       accounts: [process.env.PRIVATE_KEY1],
     },
     polygon: {

@@ -19,12 +19,13 @@ if __name__ == "__main__":
     account2 = os.getenv("MY_TESTTEST")
     pk2 = os.getenv("MY_TESTTEST_PK")
 
-    tokenAddress = "0xD4853642f9C8ED068a132803B2CbB023d1F6E188"
-    tokenAbi = "./source/TestPoL.abi"
+
+    tokenAddress = "0x9eD9dBDd506ffD9c2d9A93d679109433E5a0d799"
+    tokenAbi = "./source/myTest1.abi"
 
     web3 = polygon_connect_web3(network, apikey)
 
     myContract = polygon_get_contract(web3, tokenAddress, tokenAbi)
     
-    value = 10000000
-    #polygon_token_mint(web3, myContract, account1, pk1, value)
+    amt = 10000
+    polygon_token_airdrop_mint(web3, myContract, account1, pk1, account2, amt)

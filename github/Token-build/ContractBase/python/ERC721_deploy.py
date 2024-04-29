@@ -29,8 +29,8 @@ if __name__ == "__main__":
     ownerPK = os.getenv("PRIVATE_KEY1")
 
     tokenType = "ERC721"
-    targetTokenName = "NFTB"
-    targetSymbolName = "NFTBB"
+    targetTokenName = "VideoNFT"
+    targetSymbolName = "VNFT"
     targetAmount = None
 
     retCode, retMessage = polygon_deploy_contract(network, infuraKey, etherscanKey, ownerPK, tokenType, targetTokenName, targetSymbolName, targetAmount, logger)
