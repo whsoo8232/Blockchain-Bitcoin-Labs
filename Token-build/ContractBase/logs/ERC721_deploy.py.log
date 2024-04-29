@@ -1,0 +1,54 @@
+[2024-04-29 10:14:49.468] [DEBUG   ] yarn run v1.22.21
+$ npx hardhat clean;rm -rf .env .openzeppelin cache contracts/* scripts/*
+
+Done in 1.07s.
+
+[2024-04-29 10:17:27.571] [DEBUG   ] yarn run v1.22.21
+$ npx hardhat clean;rm -rf .env .openzeppelin cache contracts/* scripts/*
+Done in 0.82s.
+
+[2024-04-29 10:17:37.533] [ERROR   ] None failed 1 yarn run v1.22.21
+$ npx hardhat run scripts/deployv1.js
+Compiled 21 Solidity files successfully (evm target: paris).
+Deploying VideoNFT...
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+ 
+/home/whsoo8232/Token-build/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/providers/http.ts:90
+      const error = new ProviderError(
+                    ^
+ProviderError: tx fee (1.90 ether) exceeds the configured cap (1.00 ether)
+    at HttpProvider.request (/home/whsoo8232/Token-build/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/providers/http.ts:90:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at EthersProviderWrapper.send (/home/whsoo8232/Token-build/ContractBase/Upgradeable/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)
+error Command failed with exit code 1.
+
+[2024-04-29 10:19:09.163] [DEBUG   ] yarn run v1.22.21
+$ npx hardhat clean;rm -rf .env .openzeppelin cache contracts/* scripts/*
+Done in 0.79s.
+
+[2024-04-29 10:19:15.175] [ERROR   ] None failed 1 yarn run v1.22.21
+$ npx hardhat run scripts/deployv1.js
+Compiled 21 Solidity files successfully (evm target: paris).
+Deploying VideoNFT...
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+ 
+/home/whsoo8232/Token-build/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/providers/http.ts:90
+      const error = new ProviderError(
+                    ^
+ProviderError: tx fee (1.90 ether) exceeds the configured cap (1.00 ether)
+    at HttpProvider.request (/home/whsoo8232/Token-build/ContractBase/Upgradeable/node_modules/hardhat/src/internal/core/providers/http.ts:90:21)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at EthersProviderWrapper.send (/home/whsoo8232/Token-build/ContractBase/Upgradeable/node_modules/@nomiclabs/hardhat-ethers/src/internal/ethers-provider-wrapper.ts:13:20)
+error Command failed with exit code 1.
+
+[2024-04-29 10:23:03.112] [DEBUG   ] yarn run v1.22.21
+$ npx hardhat clean;rm -rf .env .openzeppelin cache contracts/* scripts/*
+Done in 0.80s.
+
+[2024-04-29 10:23:34.753] [DEBUG   ] yarn run v1.22.21
+$ npx hardhat run scripts/deployv1.js
+Compiled 21 Solidity files successfully (evm target: paris).
+Deploying VideoNFT...
+VideoNFT deployed address to: 0x696AAb91d19b678611103C4c49Fb0088Fd487d14
+Done in 31.55s.
+
